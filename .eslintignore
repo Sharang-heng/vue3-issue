@@ -1,0 +1,8 @@
+dist/
+node_modules/
+unpackage/
+
+package-lock.json
+src/auto-imports.d.ts
+src/manifest.json
+.eslintrc-auto-import.json

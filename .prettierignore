@@ -1,0 +1,9 @@
+dist/
+node_modules/
+unpackage/
+
+package-lock.json
+src/auto-imports.d.ts
+.eslintrc-auto-import.json
+tailwind.config.js
+components.d.ts
