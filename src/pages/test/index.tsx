@@ -4,11 +4,7 @@ export default defineComponent({
   render() {
     return (
       <div bg-red w-400px>
-        <RangePicker
-          // style={{ width: '260px' }}
-          w-260px
-          allowClear
-        />
+        <RangePicker important-w-50px allowClear style={{ width: '50px' }} />
       </div>
     );
   }
