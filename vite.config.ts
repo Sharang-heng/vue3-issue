@@ -4,7 +4,7 @@ import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import unocss from 'unocss/vite';
 import path from 'path';
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import AutoImport from 'unplugin-auto-import/vite';
 
 // https://vitejs.dev/config/
