@@ -13,9 +13,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "ant-design-vue": "^4.2.1",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2",
-    "ant-design-vue": "^4.2.1"
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@types/node": "^18.15.3",
