@@ -69,7 +69,7 @@ export default defineComponent({
           text: (data) => `${(data.percent * 100).toFixed(2)}%`
         })
         .tooltip((data) => ({
-          title: 'name',
+          title: null,
           name: data.name,
           value: data.value
         }))
