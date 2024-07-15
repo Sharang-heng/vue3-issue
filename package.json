@@ -17,6 +17,7 @@
     "@antv/g2": "^5.2.0",
     "ant-design-vue": "^4.2.1",
     "vue": "^3.4.27",
+    "vue-hooks-plus": "^2.2.1",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
