@@ -1,8 +1,20 @@
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRequest } from 'vue-hooks-plus';
 
 export default defineComponent({
   setup() {
+    const count = ref(0);
+    function FakeCountRequest(num: number) {
+      const min = 1000;
+      const max = 2000;
+      const time = Math.floor(Math.random() * (max - min + 1)) + min;
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const result = num * 10;
+          resolve(result);
+        }, time);
+      });
+    }
     function FakeRequest() {
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -18,6 +30,9 @@ export default defineComponent({
       });
     }
     const { runAsync } = useRequest(FakeRequest, { manual: true });
+    const { runAsync: getCount } = useRequest(FakeCountRequest, {
+      manual: true
+    });
     onMounted(() => {
       FakeRequest().then(() => {
         console.log('FakeRequest');
@@ -26,11 +41,25 @@ export default defineComponent({
         console.log('runAsync');
       });
     });
+    return {
+      count,
+      getCount
+    };
   },
   render() {
     return (
       <section py-20px w-full h-full>
-        111
+        {this.count}
+        <button
+          onClick={() => {
+            this.count++;
+            this.getCount(this.count).then((res) => {
+              console.log('res', res);
+            });
+          }}
+        >
+          发起请求
+        </button>
       </section>
     );
   }
