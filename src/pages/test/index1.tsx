@@ -48,7 +48,7 @@ export default defineComponent({
   },
   render() {
     return (
-      <section py-20px w-full h-full>
+      <div>
         {this.count}
         <button
           onClick={() => {
@@ -60,7 +60,7 @@ export default defineComponent({
         >
           发起请求
         </button>
-      </section>
+      </div>
     );
   }
 });
