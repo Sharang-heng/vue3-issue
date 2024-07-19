@@ -4,8 +4,8 @@ import type { Chart } from '@antv/g2';
 
 export default defineComponent({
   setup() {
-    const ChartId1 = 'chart1';
-    const ChartId2 = 'chart2';
+    const ChartId1 = 'chart3';
+    const ChartId2 = 'chart4';
     const TypeObj1 = {
       high: '偏高',
       low: '偏低',
@@ -120,18 +120,28 @@ export default defineComponent({
   },
   render() {
     return (
-      <div>
-        {this.count}
-        <button
-          onClick={() => {
-            this.count++;
-            this.getCount(this.count).then((res) => {
-              console.log('res', res);
-            });
-          }}
-        >
-          发起请求
-        </button>
+      <section py-20px w-full h-full>
+        <div px-20px h-full overflow-auto>
+          <Row gutter={16}>
+            <Col span={8}>
+              <ChartItem
+                chartId={this.ChartId1}
+                typeObj={this.TypeObj1}
+                requestFun={this.FakeRequest1}
+                renderChart={this.RenderChart1}
+              />
+            </Col>
+            <Col span={8}>
+              <ChartItem
+                chartId={this.ChartId2}
+                typeObj={this.TypeObj2}
+                requestFun={this.FakeRequest2}
+                renderChart={this.RenderChart2}
+              />
+            </Col>
+          </Row>
+        </div>
+      </section>
     );
   }
 });
